@@ -1,0 +1,112 @@
+.banner-container {
+  width: 50%;
+  margin: 15px auto;
+  img {
+    width: 100%;
+  }
+}
+
+.quienes-somos {
+  background-color: rgb(230, 230, 230);
+  padding: 1% 5%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  .code-logo {
+    color: rgb(240, 109, 61);
+    font-size: 45px;
+  }
+  .quienes-somos-text {
+    width: 50%;
+    h3 {
+      font-family: 'Courier New', Courier, monospace;
+      color: rgb(240, 109, 61);
+      font-size: 36px;
+      margin: 0;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  .work-social {
+    i {
+      font-size: 24px;
+      &:first-child {
+        padding-right: 12px;
+      }
+    }
+  }
+}
+
+.profiles-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.profile {
+  text-align: center;
+  position: relative;
+  margin: 6% 0;
+  width: 33%;
+  .nombre, .puesto {
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    span {
+      background-color: rgb(230, 230, 230);
+      padding: 3%;
+      border-radius: 5px;
+    }
+  }
+  .nombre {
+    font-weight: bold;
+  }
+  .puesto {
+    bottom: 3px;
+  }
+}
+
+.profile-img {
+  width: 50%;
+  margin: 0 auto;
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-container {
+    width: 100%;
+    margin-bottom: 0;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .quienes-somos {
+    .quienes-somos-text {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .code-logo, .work-social {
+      display: none;
+    }
+  }
+
+  .profiles-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    padding: 3% 0;
+    .profile {
+      width: 100%;
+    }
+  } 
+}

@@ -1,0 +1,132 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: serif;
+  a {
+    text-decoration: none;
+    color: rgb(240, 109, 61);
+  }
+  a:hover {
+    color: gray;
+  }
+}
+
+header {
+  height: 60px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  .logo {
+    height: 100%;
+    background-color: lightgray;
+    align-self: center;
+    img {
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.nav-desktop {
+  ul {
+    display: flex;
+    padding: 0;
+    li {
+      list-style-type: none;
+      a {
+        text-decoration: none;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 15px;
+        word-spacing: -6px;
+      }
+      a:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.nav-mobile {
+  display: none;
+  width: 72%;
+  align-self: center;
+  .dropdown {
+    text-align: right;
+    position: relative;
+    .fas {
+      font-size: 24px;
+    }
+    ul {
+      display: none;
+      position: absolute;
+      top: 9px;
+      width: 100%;
+      background-color: white;
+      padding: 3px 0;
+      li {
+        list-style-type: none;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(240, 109, 61);
+        font-weight: bold;
+        margin: 6px;
+      }
+    }
+    &:hover ul{
+      display: block;
+    }
+  }
+}
+
+footer {
+  height: 60px;
+  background-color: lightgray;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    margin: 0;
+    font-size: 20px;
+  }
+  .far {
+    // padding-top: 15px;
+    padding-right: 15px;
+    font-size: 24px;
+  }
+  .fab {
+    padding: 0px 15px 0 15px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px)  {
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: block;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: space-around;
+    p {
+      margin: 0;
+      font-size: 18px;
+    }
+    .far {
+      font-size: 18px;
+    }
+    .fab {
+      font-size: 18px;
+    }
+  }
+}

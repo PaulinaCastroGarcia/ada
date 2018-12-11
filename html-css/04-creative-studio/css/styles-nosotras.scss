@@ -1,0 +1,52 @@
+.nosotras {
+  text-align: center;
+  color: orangered;
+  font-size: 1.5em;
+  font-family: 'Courier New', Courier, monospace;
+}
+.profiles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  .profile-img {
+    width: 20%;
+    margin-right: 30px;
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+  .profile-text {
+    width: 50%;
+    span {
+      display: block;
+    }
+    .nombre {
+      font-size: 1.6em;
+    }
+    .puesto {
+      font-size: 1em;
+    }
+  }
+}
+
+@media (max-width: 480px)  {
+  .profiles-container {
+    width: 100%;
+    .profile-img {
+      width: 40%;
+    }
+    .profile-text {
+      width: 45%;
+    }
+  }
+}

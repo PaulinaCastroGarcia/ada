@@ -1,0 +1,110 @@
+.banner-container {
+  width: 50%;
+  margin: 15px auto;
+}
+.banner-container img {
+  width: 100%;
+}
+
+.quienes-somos {
+  background-color: #e6e6e6;
+  padding: 1% 5%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.quienes-somos .code-logo {
+  color: #f06d3d;
+  font-size: 45px;
+}
+.quienes-somos .quienes-somos-text {
+  width: 50%;
+}
+.quienes-somos .quienes-somos-text h3 {
+  font-family: "Courier New", Courier, monospace;
+  color: #f06d3d;
+  font-size: 36px;
+  margin: 0;
+}
+.quienes-somos .quienes-somos-text p {
+  font-size: 14px;
+}
+.quienes-somos .work-social i {
+  font-size: 24px;
+}
+.quienes-somos .work-social i:first-child {
+  padding-right: 12px;
+}
+
+.profiles-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.profile {
+  text-align: center;
+  position: relative;
+  margin: 6% 0;
+  width: 33%;
+}
+.profile .nombre, .profile .puesto {
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.profile .nombre span, .profile .puesto span {
+  background-color: #e6e6e6;
+  padding: 3%;
+  border-radius: 5px;
+}
+.profile .nombre {
+  font-weight: bold;
+}
+.profile .puesto {
+  bottom: 3px;
+}
+
+.profile-img {
+  width: 50%;
+  margin: 0 auto;
+}
+.profile-img img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+  .banner-container {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .banner-container img {
+    width: 100%;
+    display: block;
+  }
+
+  .quienes-somos .quienes-somos-text {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .quienes-somos .code-logo, .quienes-somos .work-social {
+    display: none;
+  }
+
+  .profiles-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    padding: 3% 0;
+  }
+  .profiles-container .profile {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

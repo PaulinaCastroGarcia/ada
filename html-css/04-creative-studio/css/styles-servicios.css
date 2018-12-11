@@ -1,0 +1,35 @@
+.servicios-container {
+  width: 100vh;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-evenly;
+}
+.servicios-container .servicio {
+  width: 36vh;
+  height: 36vh;
+  background-color: #f06d3d;
+  border-radius: 50%;
+  padding: 30px;
+  text-align: center;
+  margin: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-evenly;
+}
+.servicios-container .servicio .servicio-titulo {
+  font-size: 18px;
+  margin: 0;
+  border-bottom: 1px dotted black;
+  font-family: "Courier New", Courier, monospace;
+}
+.servicios-container .servicio p {
+  font-size: 1.8vh;
+  margin: 0;
+}
+
+/*# sourceMappingURL=styles-servicios.css.map */

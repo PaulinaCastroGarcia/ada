@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: serif;
+}
+body a {
+  text-decoration: none;
+  color: #f06d3d;
+}
+body a:hover {
+  color: gray;
+}
+
+header {
+  height: 60px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+}
+header .logo {
+  height: 100%;
+  background-color: lightgray;
+  align-self: center;
+}
+header .logo img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.nav-desktop ul {
+  display: flex;
+  padding: 0;
+}
+.nav-desktop ul li {
+  list-style-type: none;
+}
+.nav-desktop ul li a {
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 15px;
+  word-spacing: -6px;
+}
+.nav-desktop ul li a:last-of-type {
+  margin-right: 0;
+}
+
+.nav-mobile {
+  display: none;
+  width: 72%;
+  align-self: center;
+}
+.nav-mobile .dropdown {
+  text-align: right;
+  position: relative;
+}
+.nav-mobile .dropdown .fas {
+  font-size: 24px;
+}
+.nav-mobile .dropdown ul {
+  display: none;
+  position: absolute;
+  top: 9px;
+  width: 100%;
+  background-color: white;
+  padding: 3px 0;
+}
+.nav-mobile .dropdown ul li {
+  list-style-type: none;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  color: #f06d3d;
+  font-weight: bold;
+  margin: 6px;
+}
+.nav-mobile .dropdown:hover ul {
+  display: block;
+}
+
+footer {
+  height: 60px;
+  background-color: lightgray;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p {
+  margin: 0;
+  font-size: 20px;
+}
+footer .far {
+  padding-right: 15px;
+  font-size: 24px;
+}
+footer .fab {
+  padding: 0px 15px 0 15px;
+  font-size: 24px;
+}
+
+@media (max-width: 480px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: block;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  footer p {
+    margin: 0;
+    font-size: 18px;
+  }
+  footer .far {
+    font-size: 18px;
+  }
+  footer .fab {
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=styles-base.css.map */

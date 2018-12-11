@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica;
+}
+
+h1 {
+  margin-left: 10%;
+}
+
+main {
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  border: 3px solid lightpink;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-evenly;
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.products-container {
+  border: 3px solid lightpink;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 6px 0;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.cluster {
+  width: 25%;
+}
+
+.cluster:hover {
+  cursor: pointer;
+}
+
+.cluster img {
+  width: 100%;
+}
+
+.cluster span {
+  display: block;
+  padding: 3px 0;
+}
+
+.product-title {
+  background-color: lightpink;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.product-title:hover {
+  background-color: rgb(253, 161, 175);
+  transition: all 0.3s ease-in-out;
+}
+
+hr {
+  width: 98%;
+  margin: 0;
+  border: 1px solid black;
+}
+
+.forms {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+form {
+  border: 3px solid lightpink;
+  width: 33%;
+  padding: 3%;
+}
+
+form span {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+form label {
+  display: block;
+  padding: 3px;
+}
+
+form input {
+  width: 100%;
+}
+
+form input[type='submit'] {
+  background-color: lightpink;
+  border: none;
+  padding: 6px;
+  margin-top: 12px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+form input[type='submit']:hover {
+  background-color: rgb(253, 161, 175);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}

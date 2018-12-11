@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+form {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 6px;
+}
+form .title-info-container {
+  margin: 15px auto;
+  width: 100%;
+}
+form .title-info-container .title-labels {
+  display: inline-block;
+  width: 70px;
+}
+form input[type=text] {
+  outline: none;
+  width: calc(100% - 106px);
+}
+form #titulo {
+  width: calc(100% - 76px);
+}
+form button, form input[type=submit] {
+  background-color: #E50914;
+  outline: none;
+  border: none;
+  padding: 3px 9px;
+  color: white;
+  font-weight: 700;
+}
+form button:hover, form input[type=submit]:hover {
+  cursor: pointer;
+}
+form input[type=submit] {
+  width: 100%;
+}
+
+#cast-list {
+  padding-left: 92px;
+}
+
+.search {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-top: 60px;
+}
+.search #form-search #search-title {
+  margin: 0 auto 15px;
+}
+.search p {
+  margin: 12px auto;
+}
+.search ul {
+  padding: 0;
+}
+
+@media only screen and (min-width: 1025px) {
+  form {
+    width: 36vw;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 1024px) {
+  form {
+    width: 70%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
