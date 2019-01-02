@@ -59,13 +59,20 @@ function addActor(e) {
 addActorButton.addEventListener('click', addActor)
 
 function validate(title) {
+  var valid = true
   if (title == "") {
-    alert('ingresar un titulo')
-  } else if (!types[0].checked && !types[1].checked) {
-    alert('seleccionar si es pelicula o series')
-  } else if (castList.innerHTML == ''){
-    alert('agregar reparto')
-  } else {
+    document.getElementById('title').classList.add('error')
+    valid = false
+  }
+  if (!types[0].checked && !types[1].checked) {
+    document.getElementById('error-types').classList.remove('hide')
+    valid = false
+  } 
+  if (castList.innerHTML == ''){
+    document.getElementById('new-actor').classList.add('error')
+    valid = false
+  } 
+  if (valid) {
     return true
   }
 }
@@ -73,6 +80,11 @@ function validate(title) {
 var form = document.forms[0]
 function setTitle(e) {
   e.preventDefault()
+
+  document.getElementById('title').classList.remove('error')
+  document.getElementById('error-types').classList.add('hide')
+  document.getElementById('new-actor').classList.remove('error')
+  document.getElementById('error-search').classList.add('hide')
 
   var title = document.getElementById('title').value
 
@@ -95,6 +107,7 @@ function setTitle(e) {
     pushTitle(newTitle)
     
     castList.innerHTML= ''
+    cast = []
     form.reset()
   }
 }
@@ -107,8 +120,19 @@ searchForm.addEventListener('submit', showTitle)
 
 function showTitle(e) {
   e.preventDefault()
+
+  document.getElementById('error-search').classList.add('hide')
+  document.getElementById('found-title').innerHTML = ''
+  document.getElementById('found-cast').innerHTML = ''
+  document.getElementById('found-movie-series').innerHTML = ''
+
   var id = document.getElementById('search-title').value
   var titleToShow = getTitle(id)
+  
+  if (titleToShow == undefined) {
+    document.getElementById('error-search').classList.remove('hide')
+  }
+
   var title = titleToShow.title
   var cast = titleToShow.cast
  

@@ -11,6 +11,7 @@ var doneTasks = 0;
 $('#add-button').on('click', function(evt) {
   evt.preventDefault()
   var userInput = $('#user-input').val();
+  $('#user-input').removeClass('error')
 
   if (userInput != '') {
     var list = $('#list');
@@ -30,7 +31,8 @@ $('#add-button').on('click', function(evt) {
     totalTasks++ 
     $('#total-tasks').html(totalTasks);
   } else {
-    alert('pone algo');
+    $('#user-input').addClass('error')
+    $('#user-input').focus()
   }
 })
 
@@ -73,7 +75,8 @@ $(document).on('click', '.save-button', function () {
     $(this).parent().siblings('div').children('span').html(userInput);
     $(this).parent().siblings('div').removeClass('hide');
   } else {
-    alert('poner algo')
+    $(this).siblings('input').attr("placeholder", "Please write something")
+    $(this).siblings('input').focus()
   }
 })
 

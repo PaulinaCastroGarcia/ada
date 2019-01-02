@@ -46,13 +46,20 @@ addActorButton.on('click', function (e) {
 })
 
 function validate() {
+  var valid = true
   if ($('#title').val() == '') {
-    alert('ingresar un titulo')
-  } else if (!types.eq(0).is(":checked") && !types.eq(1).is(":checked")) {
-    alert('seleccionar si es pelicula o series')
-  } else if (castList.html() == ''){
-    alert('agregar reparto')
-  } else {
+    $('#title').addClass('error')
+    valid = false
+  }
+  if (!types.eq(0).is(":checked") && !types.eq(1).is(":checked")) {
+    $('#error-types').removeClass('hide')
+    valid = false
+  }
+  if (castList.html() == '') {
+    $('#new-actor').addClass('error')
+    valid = false
+  }
+  if (valid) {
     return true
   }
 }
@@ -61,6 +68,10 @@ var form = $('#form-add')
 form.on('submit', function (e) {
   e.preventDefault()
   
+  $('#title').removeClass('error')
+  $('#error-types').addClass('hide')
+  $('#new-actor').removeClass('error')
+
   var title = $('#title')
 
   if (titles.length == 0) {
@@ -82,6 +93,7 @@ form.on('submit', function (e) {
     setTitle(newTitle)
   
     castList.html('')
+    cast = []
     $('#form-add')[0].reset()
   }
 })
@@ -89,8 +101,15 @@ form.on('submit', function (e) {
 var searchForm = $('#form-search')
 searchForm.on('submit', function(e) {
   e.preventDefault()
+  $('#error-search').addClass('hide')
+
   var id = $('#search-title').val()
   var titleToShow = getTitle(id)
+
+  if (titleToShow == undefined) {
+    $('#error-search').removeClass('hide')
+  }
+
   var title = titleToShow.title
   var cast = titleToShow.cast
  

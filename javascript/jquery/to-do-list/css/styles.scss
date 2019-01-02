@@ -11,6 +11,10 @@ body .hide {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.error {
+  border: 1px solid rgb(253, 32, 65);
+}
+
 body {
   margin: 0;
   background-image: url('../img/bananas.jpg');
