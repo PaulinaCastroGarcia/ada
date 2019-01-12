@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../img/bananas.jpg");
+  background-size: 30%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header h1 {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto 15px;
+  background-color: lightpink;
+  border-radius: 15px;
+  padding: 15px 0;
+}
+header #add {
+  position: fixed;
+  top: 30px;
+  right: 60px;
+  background-color: lightpink;
+}
+
+.users-container, form, .user-container {
+  margin: 0 auto;
+  padding: 9px 0;
+  background-color: lightpink;
+  border-radius: 15px;
+}
+
+.users-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.users-container .user {
+  width: 30%;
+  text-align: center;
+  padding: 21px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  margin: 9px auto;
+}
+.users-container .user button, .users-container .user input[type=submit] {
+  background-color: lightpink;
+}
+
+button, input[type=submit] {
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+}
+button:hover, input[type=submit]:hover {
+  cursor: pointer;
+}
+
+form {
+  width: 30%;
+  text-align: center;
+}
+form div {
+  display: flex;
+  width: 80%;
+  margin: 6px auto;
+}
+form div label {
+  width: 90px;
+}
+form div input {
+  flex: 1;
+}
+form input[type=submit] {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.user-container {
+  width: 30%;
+}
+.user-container p, .user-container .edit-delete-container {
+  text-align: center;
+}
+.user-container p button, .user-container .edit-delete-container button {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/*# sourceMappingURL=styles.css.map */

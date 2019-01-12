@@ -5,7 +5,5 @@
 - DOM exercises
 - small vanilla JavaScript and jQuery projects
 
-Next:
-
-[ ] Node.js
-[ ] React
+ [ ] Node.js
+ [ ] React

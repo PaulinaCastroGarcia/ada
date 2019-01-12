@@ -1,0 +1,38 @@
+body {
+  padding: 21px;
+  font: 14px Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+#books-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.book-cluster, .book-details {
+  width: 42%;
+  display: flex;
+  border: 1px solid lightpink;
+  margin-bottom: 21px;
+}
+
+.book-cluster:hover {
+  cursor: pointer;
+}
+
+.book-cluster, .book-details div {
+  padding: 21px;
+}
+
+.book-details {
+  width:  100%;
+}
