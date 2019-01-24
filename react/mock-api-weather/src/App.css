@@ -1,0 +1,23 @@
+p {
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.day {
+  color: gray;
+  padding:  0 21px;
+  text-align: center;
+  margin: 21px 0;
+}
+
+.day:first-child {
+  border: 1px solid lightgray;
+}
+
+.max {
+  color: rgb(70, 69, 69);
+}
