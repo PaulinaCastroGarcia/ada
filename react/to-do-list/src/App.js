@@ -11,29 +11,25 @@ class App extends Component {
         {
           id: 1,
           text: 'update readme',
-          done: false
+          done: false,
         },
         {
           id: 2,
           text: 'finish website',
-          done: false
-        },
-        {
-          id: 3,
-          text: 'research for vegan101',
-          done: false
+          done: false,
         }
       ]
     }
   }
 
   render() {
-    const li = this.state.tasks.map((t) => 
+    const tasks = this.state.tasks.map((t) => 
       <Task 
         key={t.id}
         task={t}
-        toggleDoneTask={(taskId) => this.toggleDoneTask(taskId)}
-        deleteTask={(taskId) => this.deleteTask(taskId)}
+        toggleDoneTask={this.toggleDoneTask}
+        deleteTask={this.deleteTask}
+        handleSaveEdit = {this.handleSaveEdit}
       />
     )
 
@@ -41,48 +37,47 @@ class App extends Component {
       <div className="App">
         <h1>To do list</h1>
 
-        <form>
-          <input type="text" value={this.state.input} onChange={(e) => this.handleInputChange(e)} onKeyDown={(e) => this.handleInputKeyDown(e)} />
-          <button type="button" onClick={() => this.addToDo()}><i class="fas fa-plus-circle"></i></button>
+        <form onSubmit={this.addToDo}>
+          <input type="text" value={this.state.input} onChange={this.handleInputChange} onKeyDown={this.handleInputKeyDown}/>
+          <button ><i className="fas fa-plus-circle"></i></button>
         </form>
 
-        <ul>
-          {li}
-        </ul>
+        <ul>{tasks}</ul>
       </div>
     );
   }
 
-  handleInputChange(e) {
+  handleInputChange = (e) => {
     this.setState({
       input: e.target.value
     })
   }
 
-  handleInputKeyDown(e) {
+  handleInputKeyDown = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault()
-      this.addToDo()
+      this.addToDo(e)
     }
    }
 
-  addToDo() {
+  addToDo = (e) => {
+    e.preventDefault()
     if (this.state.input) {
       let tasks = this.state.tasks
       let newTask = {
-          id: tasks[tasks.length-1].id + 1,
+          id: tasks.length === 0  ? 1 : (tasks[tasks.length-1].id + 1),
           text: this.state.input,
-          done: false
+          done: false,
         }
 
       this.setState({
         input: '',
-        tasks: [...this.state.tasks, newTask]
+        tasks: [...tasks, newTask]
       })
     }
   }
 
-  toggleDoneTask(taskId) {
+  toggleDoneTask = (taskId) => {
     let tasks = this.state.tasks
     let taskIndex = tasks.findIndex(task => task.id === taskId)
 
@@ -93,16 +88,21 @@ class App extends Component {
     })
   }
 
-  deleteTask(taskId) {
+  deleteTask = (taskId) => {
+    this.setState({
+      tasks: this.state.tasks.filter(t => t.id !== taskId)
+    })
+  }
+
+  handleSaveEdit = (text,taskId) => {
     let tasks = this.state.tasks
     let taskIndex = tasks.findIndex(task => task.id === taskId)
-    tasks.splice(taskIndex,1)
+
+    tasks[taskIndex].text = text
 
     this.setState({
       tasks: tasks
     })
-
-    //tasks: this.state.tasks.filter(t => t.id !== taskId)
   }
 }
 
