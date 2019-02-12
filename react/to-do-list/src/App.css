@@ -1,16 +1,36 @@
 body {
-  background-color: lightpink;
+  background-image:url('bananas.jpg');
+  background-size: 50%;
+  background-repeat: repeat;
   font-family: Georgia, "Times New Roman", Times, serif;
   display: flex;
   justify-content: center
 }
 
-h1, form {
+#root {
+  width: 100%;
+}
+
+.App {
+  background-color: lightpink;
+  width: 80%;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px auto 0;
+}
+
+h1, p, form {
   color: #fd2041;
   text-align: center;
 }
 
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
 input[type="text"] {
+  width: 80%;
   outline: none;
   padding: 6px;
   border: 1.5px solid whitesmoke;
@@ -23,6 +43,7 @@ input[type="text"]:focus {
 ul {
   list-style-type: none;
   padding: 0;
+  text-align: center;
 }
 
 li {
@@ -33,9 +54,17 @@ li span {
   margin: 0 12px;
 }
 
+li input[type="text"] {
+  width: auto;
+}
+
 button {
   border: none;
   background-color: lightpink;
+}
+
+button:focus {
+  outline: none;
 }
 
 .delete {
@@ -44,4 +73,14 @@ button {
 
 .done {
   text-decoration: line-through;
+}
+
+@media only screen and (min-width: 800px) {
+  #root {
+    width: 50%;
+  }
+
+  .App {
+    width: 100%;
+  }
 }

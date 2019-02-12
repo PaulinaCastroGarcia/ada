@@ -5,7 +5,8 @@ class Task extends Component {
     super(props);
     this.state = {
       editing: false,
-      editInput: this.props.task.text
+      editInput: this.props.task.text,
+      placeholder: ''
     }
   }
 
@@ -28,6 +29,7 @@ class Task extends Component {
         {this.state.editing === true && 
         <input 
           type="text" 
+          placeholder={this.state.placeholder}
           ref = {this.setInputRef}
           value={this.state.editInput}
           onChange={this.handleInputEditChange}
@@ -53,12 +55,17 @@ class Task extends Component {
   }
 
   saveEdit = (e) => {
-    if (e === null|| e.keyCode === 13 ) {
+    if ((e === null || e.keyCode === 13) && this.state.editInput !== '') {
       this.setState({
-        editing: false
+        editing: false,
+        placeholder: ''
       })
 
-    this.props.handleSaveEdit(this.state.editInput,this.props.task.id)  
+      this.props.handleSaveEdit(this.state.editInput,this.props.task.id)  
+    } else if ((e === null || e.keyCode === 13) && this.state.editInput === '') {
+      this.setState({
+        placeholder: 'Psst! Please write something'
+      })
     }
   }
 
