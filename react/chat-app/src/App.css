@@ -1,0 +1,130 @@
+:root {
+	background: #e7ebf0;
+}
+
+#root {
+	height: 100%;
+}
+
+body {
+	height: 100vh;
+	font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
+}
+
+.App {
+	width: 65%;
+	height: 95%;
+	margin: 0 auto;
+	background: white;
+
+	display: grid;
+	grid-template-columns: 1fr 2.5fr;
+	grid-template-rows: auto 60px;
+}
+
+.App > div {
+	border: 1px solid #e7ebf0;
+	border-bottom: none;
+}
+
+/* room-list */
+.room-list {
+	overflow: auto;
+}
+
+.room-list h3 {
+	padding: 0 20px;
+	text-align: center;
+}
+
+.room-list ul {
+	list-style-type: none;    
+	padding: 0px;
+}
+
+.room-list li {
+	height: 36px;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+
+	transition: 0.1s ease-in-out;
+}
+
+.room-list li:not(.active):hover {
+	background: #e7f3fc;
+	transition: 0.1s ease-in-out;
+}
+
+.room-list a {
+	/* color: #5682a3; */
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 6px 0 6px 20px;
+	width: 100%;
+}
+
+.active {
+	background: #5682a3;
+}
+
+.active a {
+	color: white;
+}
+
+/* message-list */
+.message-list {
+	padding: 0 50px;
+	overflow: auto;
+}
+
+.message-list .join-room {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70%;
+	font-size: 16px;
+	color: #999;
+}
+
+.message-list .message {
+	padding: 9px;
+	padding-bottom: 0;
+}
+
+.message-list .message-username {
+	color: #3a6d99;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.message-list .message-text {
+	word-wrap: break-word;
+	line-height: 150%;
+}
+
+/* new-room-form */
+.new-room-form, .send-message-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.new-room-form form, .send-message-form form {
+	width: 90%;
+}
+
+.new-room-form input, .send-message-form input {
+	box-sizing: border-box;
+	background: #F2F2F2;
+	border: none;
+	padding: 9px;
+	width: 100%;
+}
+
+/* send-message-form */
+/* .send-message-form {
+
+} */
+
